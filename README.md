@@ -12,9 +12,6 @@ Jenna Wong Kai Pun
 
 Yudong Zheng
 
-Github url: https://github.com/prabinthakur08/Energy_Consumption_based_on_Weather_data.git
-
-
 
 ## For this project we have consider following scenario:
 
