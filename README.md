@@ -1,24 +1,24 @@
-# Energy_Consumption_based_on_Weather_data
+﻿# Energy_Consumption_based_on_Weather_data
 
 This is a group project to develop a model that predicts the energy consumption based on weather data.
 
-# Team members: Github_username
+## Team members:
 
-Bronwyn Gardiner : bgardiner1
+Bronwyn Gardiner
 
-Prabin Thakur : prabinthakur08
+Prabin Thakur
 
-Jenna Wong Kai Pun : jenna-pun
+Jenna Wong Kai Pun
 
-Yudong Zheng : Paul-Zheng123
+Yudong Zheng
 
 Github url: https://github.com/prabinthakur08/Energy_Consumption_based_on_Weather_data.git
 
 
 
-For this project we have consider following scenario:
+## For this project we have consider following scenario:
 
-For weather data:
+### For weather data:
 Columns: direction_of_maximum_wind_gust, speed_of_maximum_wind_gust(km/h) and time_of_maximum_wind_gust have missing value which were replaced by 'NaN', 0 and '0:00' respectively.
 
 Also 9am_wind_speed(km/h) and 3pm_wind_speed(km/h) has a string value of 'Calm' meaning complete absence, which is replace by 0 and it's data type is converted to float to maintain consistency. Similarly, date is converted to python datetime from string type and 3 new variables: month, weekday and type_of_week is created.
@@ -38,16 +38,16 @@ Following variables were rename accordingly:
 "3pm_cloud_amount(oktas)" : "3pm_cloud", "3pm_wind_direction" : "3pm_wind_dir", 
 "3pm_wind_speed(km/h)" : "3pm_wind_speed", "3pm_msl_pressure(hpa)" : "3pm_msl_press"
 
-For Price demand data:
+### For Price demand data:
 Raw aggregated data was downloaded from the Australian Energy Market Operator and recommended retail price (RRP) was added to the price and demand dataset. Variable SETTLEMENTDATE was converted to datetime and 2 new variables: date_only and time_only is created.
 
 After data cleaning, both dataset is merged into a dataframe: merged_data.
 
-To create the best model: 
+### To create the best model: 
 
 We have selected 2 option Decision Tree(DT) model and KNN(K Nearest Neighbour) Algorithm, because the nature of the problem is Classification and the Dependent variable is Categorical and independent varible is both categorical and continuous, mostly continuous.
 
-For DT:
+### Decision Tree:
 The initial DT is build with random state = 42 and 6 being the max depth as below:
 dt = DecisionTreeClassifier(criterion="entropy", random_state=42, max_depth=6)
 
@@ -62,7 +62,7 @@ features = ['rainfall', 'evaporation', '9am_rela_humi', '3pm_wind_speed', 'weekd
 kf = KFold(n_splits=10, shuffle=True, random_state=42)
 dt = DecisionTreeClassifier(criterion="entropy", random_state=42, max_depth=4)
 
-For KNN:
+### K Nearest Neighbors Model:
 The initial KNN model is build with random state = 5 and n_neighbors = 5, as below:
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=5)
 knn = neighbors.KNeighborsClassifier(n_neighbors=5)
@@ -76,4 +76,5 @@ features = ['min_temp', 'evaporation', '9am_rela_humi', '9am_wind_dir_n', '3pm_c
 kf = KFold(n_splits=10, shuffle=True, random_state=42)
 knn = neighbors.KNeighborsClassifier(n_neighbors=neighbours), where neighbours value ranges from 1 to 10.
 
+### Conclusion
 After evaluating both the model and performing the validation, surprisingly KNN model outperforms Decision Tree model, with heighest accuracy score.
