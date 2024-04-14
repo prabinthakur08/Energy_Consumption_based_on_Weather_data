@@ -47,7 +47,7 @@ After data cleaning, both dataset is merged into a dataframe: merged_data.
 
 We have selected 2 option Decision Tree(DT) model and KNN(K Nearest Neighbour) Algorithm, because the nature of the problem is Classification and the Dependent variable is Categorical and independent varible is both categorical and continuous, mostly continuous.
 
-### For DT:
+### Decision Tree:
 The initial DT is build with random state = 42 and 6 being the max depth as below:
 dt = DecisionTreeClassifier(criterion="entropy", random_state=42, max_depth=6)
 
@@ -62,7 +62,7 @@ features = ['rainfall', 'evaporation', '9am_rela_humi', '3pm_wind_speed', 'weekd
 kf = KFold(n_splits=10, shuffle=True, random_state=42)
 dt = DecisionTreeClassifier(criterion="entropy", random_state=42, max_depth=4)
 
-### For KNN:
+### K Nearest Neighbors Model:
 The initial KNN model is build with random state = 5 and n_neighbors = 5, as below:
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=5)
 knn = neighbors.KNeighborsClassifier(n_neighbors=5)
