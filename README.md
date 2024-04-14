@@ -2,15 +2,12 @@
 
 This is a group project to develop a model that predicts the energy consumption based on weather data.
 
-# Team members: Github_username
+## Team members:
 
-Bronwyn Gardiner : bgardiner1
-
-Prabin Thakur : prabinthakur08
-
-Jenna Wong Kai Pun : jenna-pun
-
-Yudong Zheng : Paul-Zheng123
+Bronwyn Gardiner
+Prabin Thakur
+Jenna Wong Kai Pun
+Yudong Zheng
 
 Github url: https://github.com/prabinthakur08/Energy_Consumption_based_on_Weather_data.git
 
