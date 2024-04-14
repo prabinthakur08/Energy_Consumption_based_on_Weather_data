@@ -60,8 +60,8 @@ kf = KFold(n_splits=10, shuffle=True, random_state=42)
 dt = DecisionTreeClassifier(criterion="entropy", random_state=42, max_depth=4)
 
 ### K Nearest Neighbors Model:
-The initial KNN model is build with random state = 5 and n_neighbors = 5, as below:
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=5)
+The initial KNN model is build with random state = 42 and n_neighbors = 5, as below:
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
 knn = neighbors.KNeighborsClassifier(n_neighbors=5)
 
 Similar to DT, to select the best features, we have applied filter based selection using:
