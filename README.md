@@ -77,4 +77,4 @@ kf = KFold(n_splits=10, shuffle=True, random_state=42)
 knn = neighbors.KNeighborsClassifier(n_neighbors=neighbours), where neighbours value ranges from 1 to 10.
 
 ### Conclusion
-After evaluating both the model and performing the validation, surprisingly KNN model outperforms Decision Tree model, with heighest accuracy score.
+After evaluating both the model and performing the validation, KNN model outperforms Decision Tree model, with heighest accuracy score.
